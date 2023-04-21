@@ -1,11 +1,10 @@
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import cases.StudyCase
+import cases.coroutine.StudyCombiningFlow
 
-suspend fun main() = coroutineScope {
-    launch {
-        delay(1000)
-        println("Kotlin Coroutines World!")
-    }
-    println("Hello")
+fun main() {
+    val cases = HashMap<Int, StudyCase>()
+    cases[0] = StudyCombiningFlow()
+
+    cases[cases.size - 1]?.run()
 }
+
